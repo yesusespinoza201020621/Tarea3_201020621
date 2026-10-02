@@ -30,7 +30,7 @@ El programa está desarrollado completamente en **Ensamblador GNU ARM64 nativo y
 
 Ejecuta de forma secuencial y modular dos pruebas de rendimiento aritmético:
 1. **Prueba ordenamiento burbuja:** Toma la lista desordenada y la ordena de menor a mayor *in-place* en la RAM.
-2. **Desorden Dirigido:** Intercambia por hardware el primer y último elemento para forzar trabajo en el segundo algoritmo sin perder los números originales (manteniendo el `12` intacto).
+2. **Desorden Dirigido:** Intercambia por hardware el primer y último elemento para forzar trabajo en el segundo algoritmo sin perder los números originales.
 3. **Prueba ordenamiento por salección:** Procesa el arreglo modificado utilizando búsquedas de mínimos absolutos, demostrando la coexistencia de múltiples stack frames en el mismo entorno de ejecución.
 
 Todas las salidas numéricas y de texto se realizan de forma directa al kernel mediante la llamada al sistema **`sys_write` (Syscall 64)**, traduciendo valores binarios a caracteres legibles de la tabla ASCII a mano.
