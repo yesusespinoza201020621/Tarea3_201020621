@@ -7,7 +7,7 @@
 * **Facultad:** Ingeniería
 * **Escuela:** Ciencias y Sistemas
 * **Semestre:** Segundo Semestre 2026
-* **Sección:** Laboratorio ACYE1 - A
+* **Sección:** Laboratorio Arqui1 A
 * **Auxiliar:** Diego Josue Guevarra
 * **Ing:** Otto Escobar Leiva
 ---
