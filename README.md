@@ -9,18 +9,18 @@
 * **Semestre:** Segundo Semestre 2026
 * **Sección:** Laboratorio ACYE1 - A
 * **Auxiliar:** Diego Josue Guevarra
-
+* **Ing:** Otto Escobar Leiva
 ---
 
 ## 🎯 1. Marco Formativo y Valores
-
-### 🤝 Responsabilidad Aplicada
-Como estudiante, asumo la responsabilidad completa de diseñar, escribir y depurar código en bajo nivel ARM64 puro que sea modular, eficiente y libre de fallas. Esto implica la correcta gestión de los recursos físicos de la CPU (registros) y la preservación del mapa de memoria RAM (Stack Frame) bajo los estándares de la arquitectura, garantizando una entrega que demuestre la calidad y el esfuerzo invertido en el laboratorio.
+aplicación de ordenamiento burbuja y por selección no es lo mismo en bajo nivel que alto nivel se maneja con varios registros entre el cpu y la memoria ram.
 
 ### 🧠 Competencias Desarrolladas
 1. **Apliación de Instrucciones Load/Store (Capítulo 3):** Manipulación de punteros y arreglos contiguos en la memoria RAM mediante registros de 64 bits (`.quad`) y control indexado por hardware (`LSL #3` para desplazamiento de 8 bytes).
 2. **Control de Flujo Avanzado:** Implementación de bucles condicionales anidados equivalentes a estructuras de alto nivel (`for` / `while`) utilizando banderas de estado de la ALU y saltos condicionales (`b.ge`, `b.le`, `beq`).
 3. **Modularidad y Manejo de la Pila (Capítulo 4):** Resguardo sistemático de registros protegidos (*callee-saved*) utilizando la pila (`stp` / `ldp`) para construir funciones reutilizables que eviten la corrupción del Link Register (`X30`).
+4. **todo se realizo en código puro de arm 64 por eso la cantidad de lineas porque no he implementado la función para utilizar algo de C aunque ya seria bajo nivel con trampa pienso yo para el proyecto 2 veremos eso.
+
 
 ---
 
@@ -29,9 +29,9 @@ Como estudiante, asumo la responsabilidad completa de diseñar, escribir y depur
 El programa está desarrollado completamente en **Ensamblador GNU ARM64 nativo y puro**. Declara un arreglo estático de 10 elementos de 64 bits en la sección `.data`. 
 
 Ejecuta de forma secuencial y modular dos pruebas de rendimiento aritmético:
-1. **Prueba Bubble Sort:** Toma la lista desordenada y la ordena de menor a mayor *in-place* en la RAM.
+1. **Prueba ordenamiento burbuja:** Toma la lista desordenada y la ordena de menor a mayor *in-place* en la RAM.
 2. **Desorden Dirigido:** Intercambia por hardware el primer y último elemento para forzar trabajo en el segundo algoritmo sin perder los números originales (manteniendo el `12` intacto).
-3. **Prueba Selection Sort:** Procesa el arreglo modificado utilizando búsquedas de mínimos absolutos, demostrando la coexistencia de múltiples stack frames en el mismo entorno de ejecución.
+3. **Prueba ordenamiento por salección:** Procesa el arreglo modificado utilizando búsquedas de mínimos absolutos, demostrando la coexistencia de múltiples stack frames en el mismo entorno de ejecución.
 
 Todas las salidas numéricas y de texto se realizan de forma directa al kernel mediante la llamada al sistema **`sys_write` (Syscall 64)**, traduciendo valores binarios a caracteres legibles de la tabla ASCII a mano.
 
@@ -49,7 +49,7 @@ make clean
 make
 
 # 3. Ejecutar el programa autónomo
-./tarea3_ejecutar
+./tarea3_201020621
 ```
 ## 🖼️ 4. Evidencias de Ejecución y Depuración
 
