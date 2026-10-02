@@ -1,0 +1,23 @@
+AS = aarch64-linux-gnu-as
+LD = aarch64-linux-gnu-ld
+QEMU = qemu-aarch64
+
+BASE_NAME = $(basename $(notdir $(SRC)))
+DIR_NAME = $(dir $(SRC))
+
+OBJ = $(DIR_NAME)$(BASE_NAME).o
+EXE = $(DIR_NAME)$(BASE_NAME)
+
+all: $(EXE)
+
+$(EXE): $(OBJ)
+	$(LD) -o $(EXE) $(OBJ)
+
+$(OBJ): $(SRC)
+	$(AS) -g -o $(OBJ) $(SRC)
+
+run: $(EXE)
+	cd $(DIR_NAME) && $(QEMU) ./$(BASE_NAME)
+
+clean:
+	rm -f $(OBJ) $(EXE)
